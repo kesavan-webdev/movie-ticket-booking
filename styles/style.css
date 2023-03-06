@@ -111,7 +111,9 @@ body {
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  background-color: #05050550;
+  background-color: #d6d615;
+
+  /* background-image: url(https://media.istockphoto.com/id/1295114854/photo/empty-red-armchairs-of-a-theater-ready-for-a-show.jpg?s=612x612&w=0&k=20&c=0rDtwzMmLbqe_8GuGw2dpjkD0MsXGywJmdmg0jDbMxQ=); */
 }
 .booking-container {
   background-color: var(#d3e8ee);
@@ -135,14 +137,16 @@ body {
   align-items: center;
   justify-content: center;
   perspective: 1000px;
-  background: #000;
+  background: #fff;
   padding: 1rem;
 }
 
 .screen {
-  width: 18rem;
+  width: 100%;
   height: 9rem;
   background-color: beige;
+  transform: rotateX(-45deg);
+  box-shadow: var(--dark-shadow);
 }
 .row {
   display: flex;
@@ -157,12 +161,24 @@ body {
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
 }
+.seat:not(.booked):hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
 .seat.selected {
   background-color: yellow;
 }
 .seat.booked {
   background-color: red;
+  cursor: not-allowed;
 }
 small {
   font-size: 2rem;
+}
+.row .seat:nth-last-child(2) {
+  margin-left: 1rem;
+}
+
+.row .seat:nth-child(2) {
+  margin-right: 1rem;
 }
